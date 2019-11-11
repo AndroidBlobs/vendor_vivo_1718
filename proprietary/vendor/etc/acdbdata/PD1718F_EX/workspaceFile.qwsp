@@ -1,0 +1,1414 @@
+﻿<WorkSpace_Data WSVersID="Badger_3" ToolPlugin="QACT">
+  <ACDBFile_Paths>
+    <ACDBFile_Paths path="Bluetooth_cal.acdb" />
+    <ACDBFile_Paths path="General_cal.acdb" />
+    <ACDBFile_Paths path="Global_cal.acdb" />
+    <ACDBFile_Paths path="Handset_cal.acdb" />
+    <ACDBFile_Paths path="Hdmi_cal.acdb" />
+    <ACDBFile_Paths path="Headset_cal.acdb" />
+    <ACDBFile_Paths path="Speaker_cal.acdb" />
+  </ACDBFile_Paths>
+  <OpenDSP MajorMinor="1_0">
+    <AREA_LIST>
+      <AREA type="TX" name="AUDIO_COPP_TX">
+        <TOPOLOGY name="AUDIO_TX_KTV_TOPOLOGY" ID="0x10013001" type="TX" NewAdded="true">
+          <Block name="AUDIO_TX_KTV_MODULE" ID="0x10011001" NewAdded="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x10012001" />
+              <INTERFACE I_id="0x10012002" />
+              <INTERFACE I_id="0x10012003" />
+              <INTERFACE I_id="0x10012004" />
+              <INTERFACE I_id="0x10012005" />
+              <INTERFACE I_id="0x10012006" />
+              <INTERFACE I_id="0x10012007" />
+              <INTERFACE I_id="0x10012008" />
+              <INTERFACE I_id="0x10012009" />
+            </DATA_VIEW>
+          </Block>
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="RX" name="AUDIO_COPP_RX">
+        <TOPOLOGY name="AUDIO_DS2_CUSTOM_TOPOLOGY" ID="0x1301033B" type="RX" NewAdded="true">
+          <Block name="AUDIO_DS1AP" ID="0x00010775" type="RX" />
+          <Block name="AUDIO_CHMIXER" ID="0x00010341" type="BOTH" />
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x00000079" ID="0x00010719" type="BOTH" />
+          <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+          <Block name="AUDIO_IIR" dataView_ID="0x00000011" ID="0x00010C02" type="RX" gain_dependant="Yes" />
+          <Block name="AUDIO_MBDRC" dataView_ID="0x00000012" ID="0x00010C06" type="BOTH" gain_dependant="Yes" />
+          <Block name="AUDIO_RX_CODEC_GAIN" dataView_ID="0x00000024" ID="0x00010C37" type="RX" />
+          <Block name="AUDIO_SOFT_STEP_VOLUME" dataView_ID="0x00000020" ID="0x00010BFE" type="BOTH" />
+        </TOPOLOGY>
+        <TOPOLOGY name="AUDIO_RX_STEREO_COPP_MBDRC_V3" ID="0x11000000" type="RX" NewAdded="true">
+          <Block name="AUDIO_IIR" dataView_ID="0x00000011" ID="0x00010C02" type="RX" gain_dependant="Yes" />
+          <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+          <Block name="AUDIO_RX_CODEC_GAIN" dataView_ID="0x00000024" ID="0x00010C37" type="RX" />
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x00000079" ID="0x00010719" type="BOTH" />
+          <Block name="AUDIO_MBDRC_V3" dataView_ID="0x000000B1" ID="0x0001090B" type="BOTH" gain_dependant="Yes" />
+        </TOPOLOGY>
+        <TOPOLOGY name="AUDIO_RX_MONO_COPP_MBDRC_V3" ID="0x11000001" type="RX" NewAdded="true">
+          <Block name="AUDIO_IIR" dataView_ID="0x00000011" ID="0x00010C02" type="RX" gain_dependant="Yes" />
+          <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+          <Block name="AUDIO_RX_CODEC_GAIN" dataView_ID="0x00000024" ID="0x00010C37" type="RX" />
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x00000079" ID="0x00010719" type="BOTH" />
+          <Block name="AUDIO_MBDRC_V3" dataView_ID="0x000000B1" ID="0x0001090B" type="BOTH" gain_dependant="Yes" />
+        </TOPOLOGY>
+        <TOPOLOGY name="VIVO_SPEAKER_BOOST" ID="0x10023001" type="RX" NewAdded="true">
+          <Block name="CAPI_V2_VIVO_SPEAKER_BOOST" ID="0x10021001" type="RX" NewAdded="true" />
+        </TOPOLOGY>
+        <TOPOLOGY name="VIVO_HP_EFFECT" ID="0x10023002" type="RX" NewAdded="true">
+          <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+          <Block name="CAPI_V2_VIVO_HP_EFFECT" ID="0x10021002" type="RX" NewAdded="true" />
+          <Block name="CAPI_V2_VIVO_HEADSET_ADAPTER" ID="0x10021003" type="RX" NewAdded="true" />
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="RX" name="AUDIO_POPP_RX">
+        <TOPOLOGY name="AUDPROC_OFFLOAD_EFFECTS" ID="0x1000FFFF" type="RX" NewAdded="true">
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x000000B3" ID="0x00010719" type="BOTH" />
+          <Block name="AUDIO_SOFT_STEP_VOLUME" dataView_ID="0x00000020" ID="0x00010BFE" type="BOTH" />
+          <Block name="AUDIO_POPLESS_EQUALIZER" dataView_ID="0x000000A1" ID="0x000108BA" type="RX" />
+          <Block name="AUDIO_VIRTUALIZER" dataView_ID="0x0000009A" ID="0x000108A5" type="RX" />
+          <Block name="AUDIO_CHMIXER" ID="0x00010341" type="BOTH" />
+          <Block name="AUDIO_REVERB" dataView_ID="0x0000009B" ID="0x000108AA" type="RX" />
+          <Block name="AUDIO_BASS_BOOST" dataView_ID="0x0000009C" ID="0x000108A1" type="RX" />
+          <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+          <Block name="AUDIO_SOFT_STEP_VOLUME_INSTANCE_2" dataView_ID="0x00000020" ID="0x00010910" type="BOTH" />
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="TX" name="VOICE_COPP_TX">
+        <TOPOLOGY name="VOICE_TOPOLOGY_LVVEFQ_TX_DM" ID="0x1000BFF1" type="TX" NewAdded="true">
+          <Block name="TX_VOICE_HPF" ID="0x00010F11" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_MIC_GAIN" ID="0x00010EF7" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E13" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_IIR_MIC1" ID="0x00010EF0" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_IIR_MIC2" ID="0x00010EF1" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="VOICE_MODULE_LVVEFQ_TX" ID="0x1000B500" type="TX" NewAdded="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x1000B000" />
+              <INTERFACE I_id="0x1000B001" />
+              <INTERFACE I_id="0x1000B002" />
+              <INTERFACE I_id="0x1000B003" />
+              <INTERFACE I_id="0x1000B004" />
+              <INTERFACE I_id="0x1000B005" />
+              <INTERFACE I_id="0x1000B00B" />
+              <INTERFACE I_id="0x1000B006" />
+              <INTERFACE I_id="0x1000B007" />
+              <INTERFACE I_id="0x1000B009" />
+              <INTERFACE I_id="0x1000B00A" />
+              <INTERFACE I_id="0x1000B301" />
+              <INTERFACE I_id="0x1000B302" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_IIR" ID="0x00010EE7" version="0" type="TX" dynamicModule="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_FIR" ID="0x00010EE9" version="0" type="TX" dynamicModule="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E0A" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_AIG" ID="0x00010F00" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E17" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_DRC" ID="0x00010EF3" version="0" type="TX" dynamicModule="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E0E" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_VOL" ID="0x00010EF4" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E12" />
+            </DATA_VIEW>
+          </Block>
+        </TOPOLOGY>
+        <TOPOLOGY name="VOICE_TOPOLOGY_LVVEFQ_TX_SM" ID="0x1000BFF0" type="TX" NewAdded="true">
+          <Block name="TX_VOICE_HPF" ID="0x00010F11" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_MIC_GAIN" ID="0x00010EF7" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E13" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_IIR_MIC1" ID="0x00010EF0" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="VOICE_MODULE_LVVEFQ_TX" ID="0x1000B500" type="TX" NewAdded="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x1000B000" />
+              <INTERFACE I_id="0x1000B001" />
+              <INTERFACE I_id="0x1000B002" />
+              <INTERFACE I_id="0x1000B003" />
+              <INTERFACE I_id="0x1000B004" />
+              <INTERFACE I_id="0x1000B005" />
+              <INTERFACE I_id="0x1000B00B" />
+              <INTERFACE I_id="0x1000B006" />
+              <INTERFACE I_id="0x1000B007" />
+              <INTERFACE I_id="0x1000B009" />
+              <INTERFACE I_id="0x1000B00A" />
+              <INTERFACE I_id="0x1000B301" />
+              <INTERFACE I_id="0x1000B302" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_IIR" ID="0x00010EE7" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_FIR" ID="0x00010EE9" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E0A" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_AIG" ID="0x00010F00" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E17" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_DRC" ID="0x00010EF3" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E0E" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="TX_VOICE_VOL" ID="0x00010EF4" version="0" type="TX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E12" />
+            </DATA_VIEW>
+          </Block>
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="RX" name="VOICE_COPP_RX">
+        <TOPOLOGY name="VOICE_TOPOLOGY_LVVEFQ_RX" ID="0x1000BFF2" type="RX" NewAdded="true">
+          <Block name="RX_GAIN" ID="0x00010F20" version="0" type="RX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E13" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="VOICE_MODULE_LVVEFQ_RX" ID="0x1000B501" type="RX" NewAdded="true" gain_dependant="Yes">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x1000B100" />
+              <INTERFACE I_id="0x1000B101" />
+              <INTERFACE I_id="0x1000B102" />
+              <INTERFACE I_id="0x1000B006" />
+              <INTERFACE I_id="0x1000B007" />
+              <INTERFACE I_id="0x1000B108" />
+              <INTERFACE I_id="0x1000B009" />
+              <INTERFACE I_id="0x1000B00A" />
+              <INTERFACE I_id="0x1000B10B" />
+              <INTERFACE I_id="0x1000B10C" />
+              <INTERFACE I_id="0x1000B10D" />
+              <INTERFACE I_id="0x1000B10E" />
+              <INTERFACE I_id="0x1000B301" />
+              <INTERFACE I_id="0x1000B302" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="RX_VOICE_IIR" ID="0x00010EE8" version="0" type="RX" gain_dependant="Yes">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E09" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="RX_VOICE_VOL" ID="0x00010EF5" version="0" type="RX" gain_dependant="Yes">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E12" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="RX_VOICE_DEC_GAIN" ID="0x00010EFA" version="0" type="RX">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E13" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="RX_VOICE_AIG" ID="0x00010EFF" version="0" type="RX" gain_dependant="Yes">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E17" />
+            </DATA_VIEW>
+          </Block>
+          <Block name="RX_VOICE_MBDRC" ID="0x00010EE6" version="0" type="RX" gain_dependant="Yes">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x00010E00" />
+              <INTERFACE I_id="0x00010E08" />
+            </DATA_VIEW>
+          </Block>
+        </TOPOLOGY>
+      </AREA>
+    </AREA_LIST>
+    <TOPOLOGY_LIST>
+      <TOPOLOGY name="AUDIO_DS2_CUSTOM_TOPOLOGY" ID="0x1301033B" type="RX" NewAdded="true">
+        <Block name="AUDIO_DS1AP" ID="0x00010775" type="RX" />
+        <Block name="AUDIO_CHMIXER" ID="0x00010341" type="BOTH" />
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x00000079" ID="0x00010719" type="BOTH" />
+        <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+        <Block name="AUDIO_IIR" dataView_ID="0x00000011" ID="0x00010C02" type="RX" />
+        <Block name="AUDIO_MBDRC" dataView_ID="0x00000012" ID="0x00010C06" type="BOTH" />
+        <Block name="AUDIO_RX_CODEC_GAIN" dataView_ID="0x00000024" ID="0x00010C37" type="RX" />
+        <Block name="AUDIO_SOFT_STEP_VOLUME" dataView_ID="0x00000020" ID="0x00010BFE" type="BOTH" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDIO_RX_STEREO_COPP_MBDRC_V3" ID="0x11000000" type="RX" NewAdded="true">
+        <Block name="AUDIO_IIR" dataView_ID="0x00000011" ID="0x00010C02" type="RX" />
+        <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+        <Block name="AUDIO_RX_CODEC_GAIN" dataView_ID="0x00000024" ID="0x00010C37" type="RX" />
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x00000079" ID="0x00010719" type="BOTH" />
+        <Block name="AUDIO_MBDRC_V3" dataView_ID="0x000000B1" ID="0x0001090B" type="BOTH" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDIO_RX_MONO_COPP_MBDRC_V3" ID="0x11000001" type="RX" NewAdded="true">
+        <Block name="AUDIO_IIR" dataView_ID="0x00000011" ID="0x00010C02" type="RX" />
+        <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+        <Block name="AUDIO_RX_CODEC_GAIN" dataView_ID="0x00000024" ID="0x00010C37" type="RX" />
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x00000079" ID="0x00010719" type="BOTH" />
+        <Block name="AUDIO_MBDRC_V3" dataView_ID="0x000000B1" ID="0x0001090B" type="BOTH" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDPROC_OFFLOAD_EFFECTS" ID="0x1000FFFF" type="RX" NewAdded="true">
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" dataView_ID="0x000000B3" ID="0x00010719" type="BOTH" />
+        <Block name="AUDIO_SOFT_STEP_VOLUME" dataView_ID="0x00000020" ID="0x00010BFE" type="BOTH" />
+        <Block name="AUDIO_POPLESS_EQUALIZER" dataView_ID="0x000000A1" ID="0x000108BA" type="RX" />
+        <Block name="AUDIO_VIRTUALIZER" dataView_ID="0x0000009A" ID="0x000108A5" type="RX" />
+        <Block name="AUDIO_CHMIXER" ID="0x00010341" type="BOTH" />
+        <Block name="AUDIO_REVERB" dataView_ID="0x0000009B" ID="0x000108AA" type="RX" />
+        <Block name="AUDIO_BASS_BOOST" dataView_ID="0x0000009C" ID="0x000108A1" type="RX" />
+        <Block name="AUDIO_PBE" dataView_ID="0x00000015" ID="0x00010C2A" type="RX" />
+        <Block name="AUDIO_SOFT_STEP_VOLUME_INSTANCE_2" dataView_ID="0x00000020" ID="0x00010910" type="BOTH" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDIO_TX_KTV_TOPOLOGY" ID="0x10013001" type="TX" NewAdded="true">
+        <Block name="AUDIO_TX_KTV_MODULE" ID="0x10011001" NewAdded="true">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x10012001" />
+            <INTERFACE I_id="0x10012002" />
+            <INTERFACE I_id="0x10012003" />
+            <INTERFACE I_id="0x10012004" />
+            <INTERFACE I_id="0x10012005" />
+            <INTERFACE I_id="0x10012006" />
+            <INTERFACE I_id="0x10012007" />
+            <INTERFACE I_id="0x10012008" />
+            <INTERFACE I_id="0x10012009" />
+          </DATA_VIEW>
+        </Block>
+      </TOPOLOGY>
+      <TOPOLOGY name="VIVO_SPEAKER_BOOST" ID="0x10023001" type="RX" NewAdded="true">
+        <Block name="CAPI_V2_VIVO_SPEAKER_BOOST" ID="0x10021001" type="RX" NewAdded="true" />
+      </TOPOLOGY>
+      <TOPOLOGY name="VIVO_HP_EFFECT" ID="0x10023002" type="RX" NewAdded="true">
+        <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+        <Block name="CAPI_V2_VIVO_HP_EFFECT" ID="0x10021002" type="RX" NewAdded="true" />
+        <Block name="CAPI_V2_VIVO_HEADSET_ADAPTER" ID="0x10021003" type="RX" NewAdded="true" />
+      </TOPOLOGY>
+      <TOPOLOGY name="VOICE_TOPOLOGY_LVVEFQ_TX_DM" ID="0x1000BFF1" type="TX" NewAdded="true">
+        <Block name="TX_VOICE_HPF" ID="0x00010F11" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_MIC_GAIN" ID="0x00010EF7" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E13" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_IIR_MIC1" ID="0x00010EF0" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_IIR_MIC2" ID="0x00010EF1" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="VOICE_MODULE_LVVEFQ_TX" ID="0x1000B500" type="TX" NewAdded="true">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x1000B000" />
+            <INTERFACE I_id="0x1000B001" />
+            <INTERFACE I_id="0x1000B002" />
+            <INTERFACE I_id="0x1000B003" />
+            <INTERFACE I_id="0x1000B004" />
+            <INTERFACE I_id="0x1000B005" />
+            <INTERFACE I_id="0x1000B00B" />
+            <INTERFACE I_id="0x1000B006" />
+            <INTERFACE I_id="0x1000B007" />
+            <INTERFACE I_id="0x1000B009" />
+            <INTERFACE I_id="0x1000B00A" />
+            <INTERFACE I_id="0x1000B301" />
+            <INTERFACE I_id="0x1000B302" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_IIR" ID="0x00010EE7" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_FIR" ID="0x00010EE9" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E0A" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_AIG" ID="0x00010F00" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E17" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_DRC" ID="0x00010EF3" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E0E" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_VOL" ID="0x00010EF4" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E12" />
+          </DATA_VIEW>
+        </Block>
+      </TOPOLOGY>
+      <TOPOLOGY name="VOICE_TOPOLOGY_LVVEFQ_TX_SM" ID="0x1000BFF0" type="TX" NewAdded="true">
+        <Block name="TX_VOICE_HPF" ID="0x00010F11" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_MIC_GAIN" ID="0x00010EF7" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E13" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_IIR_MIC1" ID="0x00010EF0" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="VOICE_MODULE_LVVEFQ_TX" ID="0x1000B500" type="TX" NewAdded="true">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x1000B000" />
+            <INTERFACE I_id="0x1000B001" />
+            <INTERFACE I_id="0x1000B002" />
+            <INTERFACE I_id="0x1000B003" />
+            <INTERFACE I_id="0x1000B004" />
+            <INTERFACE I_id="0x1000B005" />
+            <INTERFACE I_id="0x1000B00B" />
+            <INTERFACE I_id="0x1000B006" />
+            <INTERFACE I_id="0x1000B007" />
+            <INTERFACE I_id="0x1000B009" />
+            <INTERFACE I_id="0x1000B00A" />
+            <INTERFACE I_id="0x1000B301" />
+            <INTERFACE I_id="0x1000B302" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_IIR" ID="0x00010EE7" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_FIR" ID="0x00010EE9" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E0A" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_AIG" ID="0x00010F00" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E17" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_DRC" ID="0x00010EF3" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E0E" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="TX_VOICE_VOL" ID="0x00010EF4" version="0" type="TX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E12" />
+          </DATA_VIEW>
+        </Block>
+      </TOPOLOGY>
+      <TOPOLOGY name="VOICE_TOPOLOGY_LVVEFQ_RX" ID="0x1000BFF2" type="RX" NewAdded="true">
+        <Block name="RX_VOICE_MBDRC" ID="0x00010EE6" version="0" type="RX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E08" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="RX_VOICE_IIR" ID="0x00010EE8" version="0" type="RX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E09" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="RX_VOICE_VOL" ID="0x00010EF5" version="0" type="RX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E12" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="RX_VOICE_DEC_GAIN" ID="0x00010EFA" version="0" type="RX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E13" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="RX_VOICE_AIG" ID="0x00010EFF" version="0" type="RX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x00010E17" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="RX_GAIN" ID="0x00010F20" version="0" type="RX">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E13" />
+          </DATA_VIEW>
+        </Block>
+        <Block name="VOICE_MODULE_LVVEFQ_RX" ID="0x1000B501" type="RX" NewAdded="true">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x00010E00" />
+            <INTERFACE I_id="0x1000B100" />
+            <INTERFACE I_id="0x1000B101" />
+            <INTERFACE I_id="0x1000B102" />
+            <INTERFACE I_id="0x1000B006" />
+            <INTERFACE I_id="0x1000B007" />
+            <INTERFACE I_id="0x1000B108" />
+            <INTERFACE I_id="0x1000B009" />
+            <INTERFACE I_id="0x1000B00A" />
+            <INTERFACE I_id="0x1000B10B" />
+            <INTERFACE I_id="0x1000B10C" />
+            <INTERFACE I_id="0x1000B10D" />
+            <INTERFACE I_id="0x1000B10E" />
+            <INTERFACE I_id="0x1000B301" />
+            <INTERFACE I_id="0x1000B302" />
+          </DATA_VIEW>
+        </Block>
+      </TOPOLOGY>
+    </TOPOLOGY_LIST>
+    <BLOCK_LIST>
+      <Block name="AUDIO_SRS_TRUMEDIA" ID="0x10005010" version="0" type="RX" dataView_ID="0xFFFF0001" />
+      <Block name="CAPI_V2_VIVO_SPEAKER_BOOST" ID="0x10021001" type="RX" NewAdded="true" dataView_ID="0xFFFF0002" />
+      <Block name="VOICE_MODULE_LVVEFQ_RX" ID="0x1000B501" type="RX" NewAdded="true" dataView_ID="0xFFFF0003" />
+      <Block name="AUDIO_TX_KTV_MODULE" ID="0x10011001" NewAdded="true" dataView_ID="0xFFFF0004" />
+      <Block name="CAPI_V2_VIVO_HP_EFFECT" ID="0x10021002" type="RX" NewAdded="true" dataView_ID="0xFFFF0005" />
+      <Block name="CAPI_V2_VIVO_HEADSET_ADAPTER" ID="0x10021003" type="RX" NewAdded="true" dataView_ID="0xFFFF0006" />
+      <Block name="VOICE_MODULE_LVVEFQ_TX" ID="0x1000B500" type="TX" NewAdded="true" dataView_ID="0xFFFF0007" />
+    </BLOCK_LIST>
+    <AB_VIEW_LIST>
+      <AB_VIEW dataView_ID="0xFFFF0001" name="AUDIO_SRS_TRUMEDIA" NewAdded="true" />
+      <AB_VIEW dataView_ID="0xFFFF0002" name="CAPI_V2_VIVO_SPEAKER_BOOST" NewAdded="true">
+        <DATA_VIEW name="Data" display="true">
+          <INTERFACE I_id="0x10020000" />
+          <INTERFACE I_id="0x10020006" />
+          <INTERFACE I_id="0x10020007" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0003" name="VOICE_MODULE_LVVEFQ_RX" NewAdded="true">
+        <DATA_VIEW>
+          <INTERFACE I_id="0x00010E00" />
+          <INTERFACE I_id="0x1000B100" />
+          <INTERFACE I_id="0x1000B101" />
+          <INTERFACE I_id="0x1000B102" />
+          <INTERFACE I_id="0x1000B006" />
+          <INTERFACE I_id="0x1000B007" />
+          <INTERFACE I_id="0x1000B108" />
+          <INTERFACE I_id="0x1000B009" />
+          <INTERFACE I_id="0x1000B00A" />
+          <INTERFACE I_id="0x1000B10B" />
+          <INTERFACE I_id="0x1000B10C" />
+          <INTERFACE I_id="0x1000B10D" />
+          <INTERFACE I_id="0x1000B10E" />
+          <INTERFACE I_id="0x1000B301" />
+          <INTERFACE I_id="0x1000B302" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0004" name="AUDIO_TX_KTV_MODULE" NewAdded="true">
+        <DATA_VIEW>
+          <INTERFACE I_id="0x10012001" />
+          <INTERFACE I_id="0x10012002" />
+          <INTERFACE I_id="0x10012003" />
+          <INTERFACE I_id="0x10012004" />
+          <INTERFACE I_id="0x10012005" />
+          <INTERFACE I_id="0x10012006" />
+          <INTERFACE I_id="0x10012007" />
+          <INTERFACE I_id="0x10012008" />
+          <INTERFACE I_id="0x10012009" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0005" name="CAPI_V2_VIVO_HP_EFFECT" NewAdded="true">
+        <DATA_VIEW>
+          <INTERFACE I_id="0x10020000" />
+          <INTERFACE I_id="0x10020100" />
+          <INTERFACE I_id="0x10020200" />
+          <INTERFACE I_id="0x10020001" />
+          <INTERFACE I_id="0x10020002" />
+          <INTERFACE I_id="0x10020003" />
+          <INTERFACE I_id="0x10020004" />
+          <INTERFACE I_id="0x10020005" />
+          <INTERFACE I_id="0x10020007" />
+          <INTERFACE I_id="0x10020008" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0006" name="CAPI_V2_VIVO_HEADSET_ADAPTER" NewAdded="true">
+        <DATA_VIEW>
+          <INTERFACE I_id="0x10021000" />
+          <INTERFACE I_id="0x10021001" />
+          <INTERFACE I_id="0x10020200" />
+          <INTERFACE I_id="0x10020007" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0007" name="VOICE_MODULE_LVVEFQ_TX" NewAdded="true">
+        <DATA_VIEW>
+          <INTERFACE I_id="0x00010E00" />
+          <INTERFACE I_id="0x1000B000" />
+          <INTERFACE I_id="0x1000B001" />
+          <INTERFACE I_id="0x1000B002" />
+          <INTERFACE I_id="0x1000B003" />
+          <INTERFACE I_id="0x1000B004" />
+          <INTERFACE I_id="0x1000B005" />
+          <INTERFACE I_id="0x1000B00B" />
+          <INTERFACE I_id="0x1000B006" />
+          <INTERFACE I_id="0x1000B007" />
+          <INTERFACE I_id="0x1000B009" />
+          <INTERFACE I_id="0x1000B00A" />
+          <INTERFACE I_id="0x1000B301" />
+          <INTERFACE I_id="0x1000B302" />
+        </DATA_VIEW>
+      </AB_VIEW>
+    </AB_VIEW_LIST>
+    <INTERFACE_LIST>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_CONTROL" I_id="0x1000B000" hexStr="0000000000000000000000000000000000000000000000000000000000000020" NewAdded="true" maxSize="32">
+        <CONFIG_ELEMENT name="MicrophoneChannel_0" type="uint32" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="MicrophoneChannel_1" type="uint32" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="MicrophoneChannel_2" type="uint32" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="OutputChannel_0" type="uint32" min="0x0" max="0x64" />
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x4" />
+        <CONFIG_ELEMENT name="Mute" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="BD_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="BulkDelay" type="uint16" min="0x0" max="0x1900" />
+        <CONFIG_ELEMENT name="BD_Gain" type="int16" min="0x0" max="0x7FFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_VOL" I_id="0x1000B001" hexStr="0000000000000000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="VOL_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="VOL_Gain" type="int16" min="0xFFA0" max="0x18" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_HPF" I_id="0x1000B002" hexStr="000000003200000000000000BC020000" NewAdded="true" maxSize="16">
+        <CONFIG_ELEMENT name="HPF_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="MIC_HPF_CornerFreq" type="uint16" min="0x32" max="0x3E8" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="HPF_REF_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="HPF_REF_CornerFreq" type="int16" min="0x64" max="0x7D0" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_LPF" I_id="0x1000B003" hexStr="00000000740E0000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="LPF_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="MIC_LPF_CornerFreq" type="uint16" min="0xDAC" max="0x1E78" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_LVHF" I_id="0x1000B004" hexStr="00000000000000000020000800004000002080004000002080000200640000020001000158023363337300020001000100003363337300020001000100000000FF7F00000000C05D1801000200037928C31600409600FF7F000100055E019001000100010001000100002720272027202720FAFF66263200004000400000204E100040004000A0418813AA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1A" NewAdded="true" maxSize="168">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Mode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="TuningMode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="InputGain" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="OutputGain" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="NLMS_limit" type="int16" min="0xFFE8" max="0x0" />
+        <CONFIG_ELEMENT name="NLMS_LB_taps" type="int16" min="0x10" max="0xC8" />
+        <CONFIG_ELEMENT name="NLMS_LB_two_alpha" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="NLMS_LB_erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="NLMS_HB_taps" type="int16" min="0x10" max="0x88" />
+        <CONFIG_ELEMENT name="NLMS_HB_two_alpha" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="NLMS_HB_erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="NLMS_preset_coefs" type="int16" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="NLMS_offset" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_high_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_dt_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_low_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_echo_cutoff_LF" type="int16" min="0x0" max="0xFA0" />
+        <CONFIG_ELEMENT name="DENS_tail_alpha_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_tail_portion_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_high_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_dt_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_low_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_NL_atten_LB" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DENS_tail_alpha_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_tail_portion_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_high_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_dt_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_low_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_NL_atten_HB" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DENS_NL_atten_Low" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DENS_echo_scale_TB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_echo_relax_NE_threshold_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_echo_relax_NE_threshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_e_alpha" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_gamma_n" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_spdet_near" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_spdet_act" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_limit_ns" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_limit_ns_TB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_CNI_Gain" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_NFE_blocksize" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DENS_echo_clipping_level" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_IntensityThreshold_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_IntensityThreshold_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_SplitFrequency_0" type="int16" min="0x0" max="0xFA0" />
+        <CONFIG_ELEMENT name="WNS_SplitFrequency_1" type="int16" min="0x0" max="0xFA0" />
+        <CONFIG_ELEMENT name="WNS_Aggressiveness_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_Aggressiveness_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_Aggressiveness_2" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_Aggressiveness_3" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_PowerScaleFactor" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="WNS_MaxAttenuation_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_MaxAttenuation_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_MaxAttenuation_2" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_MaxAttenuation_3" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_HFSlope" type="int16" min="0xFFEC" max="0x0" />
+        <CONFIG_ELEMENT name="WNS_GushThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_HPFCornerFreq" type="int16" min="0x0" max="0x5DC" />
+        <CONFIG_ELEMENT name="SPDET_far" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SPDET_mic" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SPDET_x_clip" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_threshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_taps" type="int16" min="0x10" max="0x40" />
+        <CONFIG_ELEMENT name="PCD_erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_minimum_erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_erl_step" type="int16" min="0x4000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_gamma_e_rescue" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_0" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_1" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_2" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_3" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_4" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_5" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_6" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_7" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_8" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_9" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_10" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_11" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_12" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_13" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_14" type="int16" min="0x8000" max="0x7FFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_LVNV" I_id="0x1000B005" hexStr="0000000000000000000000000000000000000000000000005A00000000000000000000000000000000200020000880000020001040000020000802006400000880000020001040000020000802006400000800401D00CE2CFF7F3C0000002900000F60006000656600080A0010000000000000000000AA2A0000000000000000000000000000AA2A00000000000000001000000119010001C20100012C01580200000000C20100012C011027401F800080002C0100010001E02EE02E4000FF7F00000000FF7F00040002E02E0020000400040004C800A00F401F000000000000140014001400C316C316C316C316C316C316852300020002000805000040C316004033030000FF7F0020FF7F00000040004050000C002C0100020003000300000C009A19C2013200000127206626FAFF6400AC0D000000002000400088134000A0410008AA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1A0000" NewAdded="true" maxSize="396">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Config" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Mode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="Mode2" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="TuningMode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="MicrophoneMode0" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="MicrophoneMode1" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="MicrophonePositionX0" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionX1" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionY0" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionY1" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionZ0" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionZ1" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="ChannelType0" type="uint32" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="ChannelType1" type="uint32" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="MicrophoneInputGain0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="MicrophoneInputGain1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="OutputGain" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_taps_0" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_twoalpha_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_erl_0" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_taps_0" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_twoalpha_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_erl_0" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_preset_coefs_0" type="int16" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="AEC_NLMS_offset_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="MicrophoneGainComp_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_taps_1" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_twoalpha_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_erl_1" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_taps_1" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_twoalpha_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_erl_1" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_preset_coefs_1" type="int16" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="AEC_NLMS_offset_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="MicrophoneGainComp_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_FarThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_CAL_MicPowFloorMin" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_IMCOH_BroadsideLevelScale" type="int16" min="0x199A" max="0x4CCD" />
+        <CONFIG_ELEMENT name="SDET_PosChange_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_PosChange_ProtectPeriod" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_MaxConvergencePeriod" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_NoiseChangeFloor" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_NoiseChangeThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_MicCovThreshold_1" type="int16" min="0x0" max="0x60" />
+        <CONFIG_ELEMENT name="SDET_MicCovThreshold_2" type="int16" min="0x0" max="0x60" />
+        <CONFIG_ELEMENT name="SDET_CoherentNoiseDetect_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_CoherentNoise_Aggressiveness" type="int16" min="0x800" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_SoftSpeech" type="int16" min="0x3" max="0x64" />
+        <CONFIG_ELEMENT name="FSB_taps" type="int16" min="0x8" max="0x18" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_0" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_1" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_2" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_3" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_4" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_5" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_6" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_7" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_0" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_1" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_2" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_3" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_4" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_5" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_6" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_7" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="BMF_PosChange_StepSize" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="GSC_taps" type="int16" min="0x8" max="0x10" />
+        <CONFIG_ELEMENT name="GSC_erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="GSC_SpeechRecovery_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDetect_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaHi_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaLo_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDt_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoCutoff_LF" type="int16" min="0x0" max="0xFA0" />
+        <CONFIG_ELEMENT name="DNNS_NlAttenLow" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDetect_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaHi_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaLo_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDt_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoAlphaRev_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoTailPortion_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NlAtten_LB" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDetect_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaHi_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaLo_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDt_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoAlphaRev_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoTailPortion_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NlAtten_HB" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DNNS_EchoScale_TB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoRelax_NEThreshold_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoRelax_NEThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoClippingLevel" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_GainEta" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_SPDET_NearThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_CNILevel" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Gamma_nn_max" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Constrained_nn_lo" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Constrained_nn_hi" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Constrained_nn_highband" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_freq_0" type="int16" min="0x0" max="0x1F40" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_freq_1" type="int16" min="0x0" max="0x1F40" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_freq_2" type="int16" min="0x0" max="0x1F40" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_min_0" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_min_1" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_min_2" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_max_0" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_max_1" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_max_2" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_highSNR_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_highSNR_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_highSNR_2" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_lowSNR_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_lowSNR_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_lowSNR_2" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_rel" type="int16" min="0x2000" max="0x4000" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_NonStatRel" type="int16" min="0x200" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_NonStatRelBroadSide" type="int16" min="0x200" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxPosChange" type="int16" min="0x800" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxMax" type="int16" min="0x0" max="0xC" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxSensitivity_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxSensitivity_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_Topband" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NGS_Smoothing" type="int16" min="0x0" max="0x400" />
+        <CONFIG_ELEMENT name="DNNS_MusicalTone_Sensitivity" type="int16" min="0xFC00" max="0x400" />
+        <CONFIG_ELEMENT name="DNNS_SpeechRecovery_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_SpeechRecovery_Factor" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NoiseDetect_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NoisePullDown" type="int16" min="0x0" max="0xC" />
+        <CONFIG_ELEMENT name="DNNS_MVAD_Sensitivity_Noise" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MVAD_Sensitivity_Speech" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_VoicingThreshold" type="int16" min="0x0" max="0x200" />
+        <CONFIG_ELEMENT name="DNNS_PitchEnhancement" type="int16" min="0x0" max="0x18" />
+        <CONFIG_ELEMENT name="DNNS_PitchMaxFreq" type="int16" min="0x64" max="0x1F4" />
+        <CONFIG_ELEMENT name="DNNS_PosChange_Constrained_nn_lo" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_PosChange_Constrained_nn_hi" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_PosChange_Constrained_nn_highband" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_PowerScaleFactor" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="WNS_MicSpeechLevelDiff" type="int16" min="0x0" max="0x14" />
+        <CONFIG_ELEMENT name="WNS_DetectorThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_DetectorMaxFreq" type="int16" min="0x15E" max="0x7D0" />
+        <CONFIG_ELEMENT name="WNS_HPFCornerFreq" type="int16" min="0x0" max="0x5DC" />
+        <CONFIG_ELEMENT name="WNS_Aggressiveness" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_MaxAttenuation" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_GushThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_HFSlope" type="int16" min="0xFFEC" max="0x0" />
+        <CONFIG_ELEMENT name="WNS_SAM_MinFreq" type="int16" min="0x0" max="0x5DC" />
+        <CONFIG_ELEMENT name="WNS_SAM_MaxFreq" type="int16" min="0x7D0" max="0x1F40" />
+        <CONFIG_ELEMENT name="WNS_EnergyScaleFactor0" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="WNS_EnergyScaleFactor1" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="PCD_Taps" type="int16" min="0x10" max="0x40" />
+        <CONFIG_ELEMENT name="PCD_Erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_Threshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_MinimumErl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_ErlStep" type="int16" min="0x4000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_GammaERescue" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_0" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_1" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_2" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_3" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_4" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_5" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_6" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_7" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_8" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_9" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_10" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_11" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_12" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_13" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_14" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_15" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_16" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_17" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_18" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_19" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_20" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_21" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_22" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_23" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_24" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_25" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_26" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_27" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_28" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_29" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_30" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_31" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_32" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_33" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_34" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_LVWM" I_id="0x1000B006" hexStr="00000000000000408000FD1FB063AD7F9D5A0024" NewAdded="true" maxSize="20">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="mode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="AVL_Target_level_lin" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AVL_MinGainLin" type="int16" min="0x0" max="0x200" />
+        <CONFIG_ELEMENT name="AVL_MaxGainLin" type="int16" min="0x200" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AVL_Attack" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AVL_Release" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AVL_Limit_MaxOutputLin" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SpDetect_Threshold" type="int16" min="0x0" max="0x7FFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_EQ" I_id="0x1000B007" hexStr="00000000C0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="392">
+        <CONFIG_ELEMENT name="EQ_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="EQ_Length" type="int16" min="0x8" max="0xC0" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="EQ_Coefs" length="192" type="int16" min="0x8000" max="0x7FFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_DRC" I_id="0x1000B009" hexStr="0000000005000000000000000000000000000000000000000000000000000A00C40900000000000000000000" NewAdded="true" maxSize="44">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="NumKnees" type="int16" min="0x1" max="0x5" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="CompressorCurveInputLevels" length="5" type="int16" min="0xFFA0" max="0x0" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="CompressorCurveOutputLevels" length="5" type="int16" min="0xFFA0" max="0x0" />
+        <CONFIG_ELEMENT name="AttackTime" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="ReleaseTime" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="LimiterOperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="LimitLevel" type="int16" min="0xFFA0" max="0x0" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_LVCNG" I_id="0x1000B00A" hexStr="00000000A6FF0000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="CNG_Volume" type="int16" min="0xFFA0" max="0xFFC4" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_CONTROL" I_id="0x1000B100" hexStr="000000000000000000000000" NewAdded="true" maxSize="12">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="InputMixer" type="int16" min="0xFFA0" max="0x18" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="Mute" type="uint32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_VOL" I_id="0x1000B101" hexStr="0000000000000000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="VOL_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="VOL_Gain" type="int16" min="0xFFA0" max="0x18" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_LVFENS" I_id="0x1000B102" hexStr="000000000000E02A6000000100002720FAFF662632000000" NewAdded="true" maxSize="24">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Mode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="FENS_limit_NS" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FENS_NoiseThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_Aggressiveness" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_PowerScaleFactor" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="WNS_MaxAttenuation" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_HFSlope" type="int16" min="0xFFEC" max="0x0" />
+        <CONFIG_ELEMENT name="WNS_GushThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_HPFCornerFreq" type="int16" min="0x0" max="0x5DC" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_LVWBE" I_id="0x1000B10D" hexStr="0000000000000000F1FF7017B0FFCC4CF0FFD80EF4010000" NewAdded="true" maxSize="24">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Mode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="MidBandGain" type="int16" min="0xFFA6" max="0xC" />
+        <CONFIG_ELEMENT name="UpperBandGain" type="int16" min="0xFFA6" max="0x1E" />
+        <CONFIG_ELEMENT name="UpperBandCornerFreq" type="int16" min="0x1194" max="0x1D4C" />
+        <CONFIG_ELEMENT name="UpperBandDetectorThreshold" type="int16" min="0xFFA0" max="0xFFC4" />
+        <CONFIG_ELEMENT name="VoiceActivityThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PostProcessorGainMin" type="int16" min="0xFFA6" max="0x0" />
+        <CONFIG_ELEMENT name="PostProcessorFreqHigh" type="int16" min="0xD16" max="0xFA0" />
+        <CONFIG_ELEMENT name="PostProcessorFreqLow" type="int16" min="0x0" max="0x960" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_LVAVC" I_id="0x1000B10E" hexStr="0000000000000A00000028003C00000000000000060006000600000000003C0037003200FF7FFF7FFF7F00000A00FF7F00000000" NewAdded="true" maxSize="52">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Mode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="Gain" type="uint16" min="0x0" max="0x1E" />
+        <CONFIG_ELEMENT name="NoiseAdaptTh0" type="int16" min="0x0" max="0x5A" />
+        <CONFIG_ELEMENT name="NoiseAdaptTh1" type="int16" min="0x0" max="0x5A" />
+        <CONFIG_ELEMENT name="NoiseAdaptTh2" type="int16" min="0x0" max="0x5A" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptGmin1" type="int16" min="0x0" max="0x1E" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptGmin2" type="int16" min="0x0" max="0x1E" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptGmin3" type="int16" min="0x0" max="0x1E" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptGmax1" type="int16" min="0x0" max="0x1E" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptGmax2" type="int16" min="0x0" max="0x1E" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptGmax3" type="int16" min="0x0" max="0x1E" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptAttack" type="int16" min="0x0" max="0x64" />
+        <CONFIG_ELEMENT name="NASEL_NoiseAdaptRelease" type="int16" min="0x0" max="0x64" />
+        <CONFIG_ELEMENT name="NASEL_CompKnee1" type="int16" min="0x0" max="0x5A" />
+        <CONFIG_ELEMENT name="NASEL_CompKnee2" type="int16" min="0x0" max="0x5A" />
+        <CONFIG_ELEMENT name="NASEL_CompKnee3" type="int16" min="0x0" max="0x5A" />
+        <CONFIG_ELEMENT name="NASEL_CompRatio1" type="int16" min="0x2" max="0x7FFF" />
+        <CONFIG_ELEMENT name="NASEL_CompRatio2" type="int16" min="0x2" max="0x7FFF" />
+        <CONFIG_ELEMENT name="NASEL_CompRatio3" type="int16" min="0x2" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FU_MinGain" type="int16" min="0x0" max="0x36" />
+        <CONFIG_ELEMENT name="FU_MaxGain" type="int16" min="0x0" max="0x36" />
+        <CONFIG_ELEMENT name="Limiter_Thr" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="Advanced_Config" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_HPF" I_id="0x1000B108" hexStr="0000000032000000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="HPF_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="HPF_CornerFreq" type="uint16" min="0x32" max="0x5DC" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_LVNG" I_id="0x1000B10B" hexStr="000000000500000000000000000000000000000000000000000000000000320032000000" NewAdded="true" maxSize="36">
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="NumKnees" type="uint16" min="0x1" max="0x5" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="CompressorCurveInputLevels" length="5" type="int16" min="0xFFA0" max="0x0" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="CompressorCurveOutputLevels" length="5" type="int16" min="0xFFA0" max="0x0" />
+        <CONFIG_ELEMENT name="AttackTime" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="ReleaseTime" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_RX_NF" I_id="0x1000B10C" hexStr="000000000A00200378000000" NewAdded="true" maxSize="12">
+        <CONFIG_ELEMENT name="NF_OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="NF_Attenuation" type="int16" min="0x0" max="0x18" />
+        <CONFIG_ELEMENT name="NF_Frequency" type="int16" min="0x190" max="0x5DC" />
+        <CONFIG_ELEMENT name="NF_QFactor" type="int16" min="0x32" max="0x1F4" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_INJECTION_IN" I_id="0x1000B301" hexStr="0000000000000000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="enable" type="uint16" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="mode" type="uint16" min="0x0" max="0x7" />
+        <CONFIG_ELEMENT name="shift_bit" type="int16" min="0xFFEC" max="0x14" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_INJECTION_OUT" I_id="0x1000B302" hexStr="0000000000000000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="enable" type="uint16" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="mode" type="uint16" min="0x0" max="0x7" />
+        <CONFIG_ELEMENT name="shift_bit" type="int16" min="0xFFEC" max="0x14" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_ENABLE" I_id="0x10012001" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_EQ_PARAMS" I_id="0x10012002" hexStr="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="44">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT_ARRAY name="params" length="10" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_NOISECANCEL_PARAMS" I_id="0x10012003" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_COMPRESSOR_PARAMS" I_id="0x10012004" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_REVERB_PARAMS" I_id="0x10012005" hexStr="00000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="28">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="roomsize" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="damp" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="wet" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="dry" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="width" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_ECHO_PARAMS" I_id="0x10012006" hexStr="0000000000000000000000000000000000000000" NewAdded="true" maxSize="20">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="feedback" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="delay" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="wet" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="dry" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_HC_PARAMS" I_id="0x10012007" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_GRAMOPHONE_PARAMS" I_id="0x10012008" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_VOICE_GAIN" I_id="0x10012009" hexStr="00200000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="voice_gain" type="int32" min="0x0" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_ENABLE" I_id="0x10020000" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_EQ" I_id="0x10020001" hexStr="00000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="208">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Gain" type="int32" min="0x0" max="0x8000" />
+        <CONFIG_ELEMENT_ARRAY name="Filter0" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter1" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter2" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter3" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter4" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter5" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter6" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter7" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter8" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter9" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_REVERB" I_id="0x10020002" hexStr="00000000010000000100000001000000010000000100000001000000" NewAdded="true" maxSize="28">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="roomsize" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="damp" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="wet" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="dry" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="witdth" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="Gain" type="int32" min="0x0" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_STEREO" I_id="0x10020003" hexStr="00000000001800000020000000180000002000000016000000160000" NewAdded="true" maxSize="28">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="side_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="dry_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="wet_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="roomsize" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="damp" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_VIRTUAL_BASS" I_id="0x10020004" hexStr="00000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="40">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="clip_level" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="nld_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="origin_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="high_band_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="filter" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_SVC" I_id="0x10020005" hexStr="00000000002000000300000007000000" NewAdded="true" maxSize="16">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="level" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="attact_order" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="release_order" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_SBS" I_id="0x10020006" hexStr="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="180">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="nld_gain_left" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="nld_gain_right" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="channel_ration" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="channel_num" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_low_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_mid_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_high_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_full_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_low_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_mid_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_high_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_full_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_EQ_PARAM" I_id="0x10020007" hexStr="000000000020000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="492">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT_ARRAY name="gain" length="2" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left0" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left1" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left2" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left3" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left4" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left5" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left6" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left7" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left8" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left9" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right0" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right1" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right2" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right3" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right4" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right5" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right6" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right7" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right8" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right9" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_CB_PARAM" I_id="0x10020008" hexStr="000000000200000000000000" NewAdded="true" maxSize="12">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="channel_num" type="int32" min="0x0" max="0xA" />
+        <CONFIG_ELEMENT name="channel_ration" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_CONTROL" I_id="0x10020100" hexStr="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="120">
+        <CONFIG_ELEMENT name="type" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="param" length="29" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_DEBUG" I_id="0x10020200" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_HEADSET_ADAPATER_PARAM_ENABLE" I_id="0x10021000" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_HEADSET_ADAPATER_PARAM_TYPE" I_id="0x10021001" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="type" type="int32" min="0x0" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="VOICE_PARAM_LVVEFQ_TX_LVMICCOVER" I_id="0x1000B00B" hexStr="00000000010000000000000000000000000000000000000000000000000000005A00000000000000000000000000000000200020000880000020001040000020000802006400000880000020001040000020000802006400000800401D00CE2CFF7F3C0000002900000F60006000656600080A0010000000000000000000AA2A0000000000000000000000000000AA2A00000000000000001000000119010001C20100012C01580200000000C20100012C011027401F800080002C0100010001E02EE02E4000FF7F00000000FF7F00040002E02E0020000400040004C800A00F401F000000000000140014001400C316C316C316C316C316C316852300020002000805000040C316004033030000FF7F0020FF7F00000040004050000C002C0100020003000300000C009A19C2013200000127206626FAFF6400AC0D000000002000400088134000A0410008AA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1AAA1A0000" NewAdded="true" maxSize="404">
+        <CONFIG_ELEMENT name="MicCoverMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="MicThreshold" type="uint32" min="0x1" max="0x1F4" />
+        <CONFIG_ELEMENT name="OperatingMode" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Config" type="uint32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Mode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="Mode2" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="TuningMode" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="MicrophoneMode0" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="MicrophoneMode1" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="MicrophonePositionX0" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionX1" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionY0" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionY1" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionZ0" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="MicrophonePositionZ1" type="uint16" min="0x0" max="0x190" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+        <CONFIG_ELEMENT name="ChannelType0" type="uint32" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="ChannelType1" type="uint32" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="MicrophoneInputGain0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="MicrophoneInputGain1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="OutputGain" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_taps_0" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_twoalpha_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_erl_0" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_taps_0" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_twoalpha_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_erl_0" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_preset_coefs_0" type="int16" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="AEC_NLMS_offset_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="MicrophoneGainComp_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_taps_1" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_twoalpha_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_LB_erl_1" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_taps_1" type="int16" min="0x10" max="0x80" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_twoalpha_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_HB_erl_1" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="AEC_NLMS_preset_coefs_1" type="int16" min="0x0" max="0x2" />
+        <CONFIG_ELEMENT name="AEC_NLMS_offset_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="MicrophoneGainComp_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_FarThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_CAL_MicPowFloorMin" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_IMCOH_BroadsideLevelScale" type="int16" min="0x199A" max="0x4CCD" />
+        <CONFIG_ELEMENT name="SDET_PosChange_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_PosChange_ProtectPeriod" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_MaxConvergencePeriod" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_NoiseChangeFloor" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_NoiseChangeThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_MicCovThreshold_1" type="int16" min="0x0" max="0x60" />
+        <CONFIG_ELEMENT name="SDET_MicCovThreshold_2" type="int16" min="0x0" max="0x60" />
+        <CONFIG_ELEMENT name="SDET_CoherentNoiseDetect_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_CoherentNoise_Aggressiveness" type="int16" min="0x800" max="0x7FFF" />
+        <CONFIG_ELEMENT name="SDET_SoftSpeech" type="int16" min="0x3" max="0x64" />
+        <CONFIG_ELEMENT name="FSB_taps" type="int16" min="0x8" max="0x18" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_0" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_1" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_2" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_3" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_4" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_5" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_6" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_0_7" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_0" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_1" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_2" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_3" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_4" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_5" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_6" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="FSB_InitTable_1_7" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="BMF_PosChange_StepSize" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="GSC_taps" type="int16" min="0x8" max="0x10" />
+        <CONFIG_ELEMENT name="GSC_erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="GSC_SpeechRecovery_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDetect_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaHi_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaLo_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDt_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoCutoff_LF" type="int16" min="0x0" max="0xFA0" />
+        <CONFIG_ELEMENT name="DNNS_NlAttenLow" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDetect_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaHi_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaLo_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDt_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoAlphaRev_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoTailPortion_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NlAtten_LB" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDetect_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaHi_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaLo_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoGammaDt_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoAlphaRev_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoTailPortion_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NlAtten_HB" type="int16" min="0x0" max="0x800" />
+        <CONFIG_ELEMENT name="DNNS_EchoScale_TB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoRelax_NEThreshold_LF" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoRelax_NEThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_EchoClippingLevel" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_GainEta" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_SPDET_NearThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_CNILevel" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Gamma_nn_max" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Constrained_nn_lo" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Constrained_nn_hi" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_Constrained_nn_highband" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_freq_0" type="int16" min="0x0" max="0x1F40" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_freq_1" type="int16" min="0x0" max="0x1F40" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_freq_2" type="int16" min="0x0" max="0x1F40" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_min_0" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_min_1" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_min_2" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_max_0" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_max_1" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_SNR_max_2" type="int16" min="0xFFFB" max="0x3F" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_highSNR_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_highSNR_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_highSNR_2" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_lowSNR_0" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_lowSNR_1" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_lowSNR_2" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_rel" type="int16" min="0x2000" max="0x4000" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_NonStatRel" type="int16" min="0x200" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_NonStatRelBroadSide" type="int16" min="0x200" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxPosChange" type="int16" min="0x800" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxMax" type="int16" min="0x0" max="0xC" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxSensitivity_LB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_RelaxSensitivity_HB" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MinGain_Topband" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NGS_Smoothing" type="int16" min="0x0" max="0x400" />
+        <CONFIG_ELEMENT name="DNNS_MusicalTone_Sensitivity" type="int16" min="0xFC00" max="0x400" />
+        <CONFIG_ELEMENT name="DNNS_SpeechRecovery_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_SpeechRecovery_Factor" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NoiseDetect_Sensitivity" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_NoisePullDown" type="int16" min="0x0" max="0xC" />
+        <CONFIG_ELEMENT name="DNNS_MVAD_Sensitivity_Noise" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_MVAD_Sensitivity_Speech" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_VoicingThreshold" type="int16" min="0x0" max="0x200" />
+        <CONFIG_ELEMENT name="DNNS_PitchEnhancement" type="int16" min="0x0" max="0x18" />
+        <CONFIG_ELEMENT name="DNNS_PitchMaxFreq" type="int16" min="0x64" max="0x1F4" />
+        <CONFIG_ELEMENT name="DNNS_PosChange_Constrained_nn_lo" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_PosChange_Constrained_nn_hi" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="DNNS_PosChange_Constrained_nn_highband" type="int16" min="0x100" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_PowerScaleFactor" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="WNS_MicSpeechLevelDiff" type="int16" min="0x0" max="0x14" />
+        <CONFIG_ELEMENT name="WNS_DetectorThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_DetectorMaxFreq" type="int16" min="0x15E" max="0x7D0" />
+        <CONFIG_ELEMENT name="WNS_HPFCornerFreq" type="int16" min="0x0" max="0x5DC" />
+        <CONFIG_ELEMENT name="WNS_Aggressiveness" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_MaxAttenuation" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_GushThreshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="WNS_HFSlope" type="int16" min="0xFFEC" max="0x0" />
+        <CONFIG_ELEMENT name="WNS_SAM_MinFreq" type="int16" min="0x0" max="0x5DC" />
+        <CONFIG_ELEMENT name="WNS_SAM_MaxFreq" type="int16" min="0x7D0" max="0x1F40" />
+        <CONFIG_ELEMENT name="WNS_EnergyScaleFactor0" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="WNS_EnergyScaleFactor1" type="int16" min="0xFFA0" max="0x20" />
+        <CONFIG_ELEMENT name="PCD_Taps" type="int16" min="0x10" max="0x40" />
+        <CONFIG_ELEMENT name="PCD_Erl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_Threshold" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_MinimumErl" type="int16" min="0x40" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_ErlStep" type="int16" min="0x4000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="PCD_GammaERescue" type="int16" min="0x0" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_0" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_1" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_2" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_3" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_4" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_5" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_6" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_7" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_8" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_9" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_10" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_11" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_12" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_13" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_14" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_15" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_16" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_17" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_18" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_19" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_20" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_21" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_22" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_23" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_24" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_25" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_26" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_27" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_28" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_29" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_30" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_31" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_32" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_33" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="RsvParam_34" type="int16" min="0x8000" max="0x7FFF" />
+        <CONFIG_ELEMENT name="reserved" type="uint16" min="0x0" max="0xFFFF" />
+      </INTERFACE>
+    </INTERFACE_LIST>
+  </OpenDSP>
+  <GUI_Data />
+</WorkSpace_Data>
